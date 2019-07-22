@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+import dev.amaan.cardhelper.model.OpenLink.OpenLinkBuilder;
+
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
         "imageUrl",
@@ -44,8 +46,8 @@ public class Image {
         private String imageUrl;
         private OpenLink openLink;
 
-        private OpenLink.OpenLinkBuilder<ImageBuilder> openLinkBuilder =
-            OpenLink.Builder().withParentBuilder(this);
+        private OpenLinkBuilder<ImageBuilder> openLinkBuilder =
+            OpenLink.<ImageBuilder>Builder().withParentBuilder(this);
 
         private ImageBuilder() {
         }
@@ -54,7 +56,7 @@ public class Image {
             return new ImageBuilder();
         }
 
-        public OpenLink.OpenLinkBuilder addOpenLink() {
+        public OpenLinkBuilder<ImageBuilder> addOpenLink() {
             return this.openLinkBuilder;
         }
 

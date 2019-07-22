@@ -30,14 +30,14 @@ public class OpenLink {
     public static final class OpenLinkBuilder<T> extends NestedBuilder<T, OpenLink> {
         private String url;
 
-        OpenLinkBuilder() {
+        private OpenLinkBuilder() {
         }
 
-        public static OpenLinkBuilder anOpenLink() {
-            return new OpenLinkBuilder();
+        public static <T> OpenLinkBuilder<T> anOpenLink() {
+            return new OpenLinkBuilder<T>();
         }
 
-        public OpenLinkBuilder withUrl(String url) {
+        public OpenLinkBuilder<T> withUrl(String url) {
             this.url = url;
             return this;
         }
