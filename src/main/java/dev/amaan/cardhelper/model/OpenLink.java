@@ -33,11 +33,11 @@ public class OpenLink {
         private OpenLinkBuilder() {
         }
 
-        public static OpenLinkBuilder anOpenLink() {
-            return new OpenLinkBuilder();
+        public static <T> OpenLinkBuilder<T> anOpenLink() {
+            return new OpenLinkBuilder<T>();
         }
 
-        public OpenLinkBuilder withUrl(String url) {
+        public OpenLinkBuilder<T> withUrl(String url) {
             this.url = url;
             return this;
         }
