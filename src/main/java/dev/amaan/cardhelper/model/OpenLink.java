@@ -13,8 +13,8 @@ public class OpenLink {
     @JsonProperty("url")
     private String url;
 
-    public static OpenLinkBuilder Builder() {
-        return new OpenLinkBuilder();
+    public static <T> OpenLinkBuilder<T> Builder() {
+        return new OpenLinkBuilder<T>();
     }
 
     @JsonProperty("url")
@@ -27,10 +27,10 @@ public class OpenLink {
         this.url = url;
     }
 
-    public static final class OpenLinkBuilder extends NestedBuilder<Image.ImageBuilder, OpenLink> {
+    public static final class OpenLinkBuilder<T> extends NestedBuilder<T, OpenLink> {
         private String url;
 
-        private OpenLinkBuilder() {
+        OpenLinkBuilder() {
         }
 
         public static OpenLinkBuilder anOpenLink() {
