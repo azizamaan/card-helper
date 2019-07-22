@@ -30,7 +30,7 @@ public class OpenLink {
     public static final class OpenLinkBuilder<T> extends NestedBuilder<T, OpenLink> {
         private String url;
 
-        OpenLinkBuilder() {
+        private OpenLinkBuilder() {
         }
 
         public static OpenLinkBuilder anOpenLink() {
