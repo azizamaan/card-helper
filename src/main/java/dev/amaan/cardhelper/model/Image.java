@@ -46,7 +46,7 @@ public class Image {
         private String imageUrl;
         private OpenLink openLink;
 
-        private OpenLinkBuilder<ImageBuilder> openLinkBuilder =
+       private OpenLinkBuilder<ImageBuilder> openLinkBuilder =
             OpenLink.<ImageBuilder>Builder().withParentBuilder(this);
 
         private ImageBuilder() {
