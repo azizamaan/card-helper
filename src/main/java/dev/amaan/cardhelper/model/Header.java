@@ -19,7 +19,7 @@ public class Header {
     @JsonProperty("imageUrl")
     private String imageUrl;
 
-    public static HeaderBuilder Builder() {
+    public static HeaderBuilder builder() {
         return new HeaderBuilder();
     }
 

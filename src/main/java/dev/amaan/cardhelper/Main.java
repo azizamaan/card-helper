@@ -2,7 +2,6 @@ package dev.amaan.cardhelper;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import dev.amaan.cardhelper.model.Message;
 
 public class Main {
@@ -27,15 +26,15 @@ public class Main {
                 .done()
                 .build();*/
         Message message = Message.
-            messageBuilder()
-            .addCard()
-            .addSection()
-            .addWidget()
-            .addImage().addOpenLink().withUrl("test.com").done().done()
-            .done()
-            .done()
-            .done()
-            .build();
+                messageBuilder()
+                .addCard()
+                .addSection()
+                .addWidget()
+                .addImage().addOpenLink().withUrl("test.com").done().done()
+                .done()
+                .done()
+                .done()
+                .build();
 
         ObjectMapper mapper = new ObjectMapper();
 

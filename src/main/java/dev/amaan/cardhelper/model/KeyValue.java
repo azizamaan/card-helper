@@ -34,7 +34,7 @@ public class KeyValue {
     @JsonProperty("button")
     private Button button;
 
-    public static KeyValueBuilder Builder() {
+    public static KeyValueBuilder builder() {
         return new KeyValueBuilder();
     }
 
@@ -127,6 +127,7 @@ public class KeyValue {
         private String icon;
         private String iconUrl;
         private Button button;
+        private OpenLink.OpenLinkBuilder<KeyValueBuilder> openLinkBuilder = OpenLink.<KeyValueBuilder>builder().withParentBuilder(this);
 
         private KeyValueBuilder() {
         }
@@ -134,6 +135,11 @@ public class KeyValue {
         public static KeyValueBuilder aKeyValue() {
             return new KeyValueBuilder();
         }
+
+        public OpenLink.OpenLinkBuilder<KeyValueBuilder> addOpenLink() {
+            return this.openLinkBuilder;
+        }
+
 
         public KeyValueBuilder withTopLabel(String topLabel) {
             this.topLabel = topLabel;

@@ -19,7 +19,7 @@ public class Card {
     @JsonProperty("sections")
     private List<Section> sections = null;
 
-    public static CardBuilder Builder() {
+    public static CardBuilder builder() {
         return new CardBuilder();
     }
 
@@ -47,8 +47,8 @@ public class Card {
         private Header header;
         private List<Section> sections = new ArrayList<Section>();
 
-        private Header.HeaderBuilder headerBuilder = Header.Builder().withParentBuilder(this);
-        private Section.SectionBuilder sectionBuilder = Section.Builder().withParentBuilder(this);
+        private Header.HeaderBuilder headerBuilder = Header.builder().withParentBuilder(this);
+        private Section.SectionBuilder sectionBuilder = Section.builder().withParentBuilder(this);
 
         private CardBuilder() {
         }

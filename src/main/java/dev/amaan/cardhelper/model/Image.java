@@ -3,7 +3,6 @@ package dev.amaan.cardhelper.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-
 import dev.amaan.cardhelper.model.OpenLink.OpenLinkBuilder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -18,7 +17,7 @@ public class Image {
     @JsonProperty("openLink")
     private OpenLink openLink;
 
-    public static ImageBuilder Builder() {
+    public static ImageBuilder builder() {
         return new ImageBuilder();
     }
 
@@ -46,8 +45,7 @@ public class Image {
         private String imageUrl;
         private OpenLink openLink;
 
-       private OpenLinkBuilder<ImageBuilder> openLinkBuilder =
-            OpenLink.<ImageBuilder>Builder().withParentBuilder(this);
+        private OpenLinkBuilder<ImageBuilder> openLinkBuilder = OpenLink.<ImageBuilder>builder().withParentBuilder(this);
 
         private ImageBuilder() {
         }

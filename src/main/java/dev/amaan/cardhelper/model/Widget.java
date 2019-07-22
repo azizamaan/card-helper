@@ -21,7 +21,7 @@ public class Widget {
     @JsonProperty("buttons")
     private List<Button> buttons = null;
 
-    public static WidgetBuilder Builder() {
+    public static WidgetBuilder builder() {
         return new WidgetBuilder();
     }
 
@@ -60,10 +60,10 @@ public class Widget {
         private Image image;
         private List<Button> buttons = null;
 
-        private KeyValue.KeyValueBuilder keyValueBuilder = KeyValue.Builder().withParentBuilder(this);
-        private Image.ImageBuilder imageBuilder = Image.Builder().withParentBuilder(this);
+        private KeyValue.KeyValueBuilder keyValueBuilder = KeyValue.builder().withParentBuilder(this);
+        private Image.ImageBuilder imageBuilder = Image.builder().withParentBuilder(this);
 
-        /*private Button.ButtonBuilder buttonBuilder = Button.Builder().withParentBuilder(this);
+        /*private Button.ButtonBuilder buttonBuilder = Button.builder().withParentBuilder(this);
         public Button.ButtonBuilder addButton() {
             return this.buttonBuilder;
         }

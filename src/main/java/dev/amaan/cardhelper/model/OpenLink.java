@@ -13,7 +13,7 @@ public class OpenLink {
     @JsonProperty("url")
     private String url;
 
-    public static <T> OpenLinkBuilder<T> Builder() {
+    public static <T> OpenLinkBuilder<T> builder() {
         return new OpenLinkBuilder<T>();
     }
 

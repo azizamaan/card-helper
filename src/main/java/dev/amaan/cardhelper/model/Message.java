@@ -33,7 +33,7 @@ public class Message {
     public static final class MessageBuilder {
         private List<Card> cards = new ArrayList<Card>();
 
-        private Card.CardBuilder cardBuilder = Card.Builder().withParentBuilder(this);
+        private Card.CardBuilder cardBuilder = Card.builder().withParentBuilder(this);
 
         private MessageBuilder() {
         }

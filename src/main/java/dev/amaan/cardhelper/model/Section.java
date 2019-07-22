@@ -19,7 +19,7 @@ public class Section {
     @JsonProperty("widgets")
     private List<Widget> widgets = null;
 
-    public static SectionBuilder Builder() {
+    public static SectionBuilder builder() {
         return new SectionBuilder();
     }
 
@@ -47,7 +47,7 @@ public class Section {
         private String header;
         private List<Widget> widgets = new ArrayList<Widget>();
 
-        private Widget.WidgetBuilder widgetBuilder = Widget.Builder().withParentBuilder(this);
+        private Widget.WidgetBuilder widgetBuilder = Widget.builder().withParentBuilder(this);
 
         private SectionBuilder() {
         }

@@ -19,7 +19,7 @@ public class ImageButton extends Button {
     @JsonProperty("openLink")
     private OpenLink openLink;
 
-    public static ImageButtonBuilder Builder() {
+    public static ImageButtonBuilder builder() {
         return new ImageButtonBuilder();
     }
 
@@ -58,11 +58,17 @@ public class ImageButton extends Button {
         private String iconUrl;
         private OpenLink openLink;
 
+        private OpenLink.OpenLinkBuilder<ImageButtonBuilder> openLinkBuilder = OpenLink.<ImageButtonBuilder>builder().withParentBuilder(this);
+
         private ImageButtonBuilder() {
         }
 
         public static ImageButtonBuilder anImageButton() {
             return new ImageButtonBuilder();
+        }
+
+        public OpenLink.OpenLinkBuilder<ImageButtonBuilder> addOpenLink() {
+            return this.openLinkBuilder;
         }
 
         public ImageButtonBuilder withIcon(String icon) {

@@ -16,7 +16,7 @@ public class TextButton extends Button {
     @JsonProperty("openLink")
     private OpenLink openLink;
 
-    public static TextButtonBuilder Builder() {
+    public static TextButtonBuilder builder() {
         return new TextButtonBuilder();
     }
 
@@ -44,11 +44,17 @@ public class TextButton extends Button {
         private String text;
         private OpenLink openLink;
 
+        private OpenLink.OpenLinkBuilder<TextButtonBuilder> openLinkBuilder = OpenLink.<TextButtonBuilder>builder().withParentBuilder(this);
+
         private TextButtonBuilder() {
         }
 
         public static TextButtonBuilder aTextButton() {
             return new TextButtonBuilder();
+        }
+
+        public OpenLink.OpenLinkBuilder<TextButtonBuilder> addOpenLink() {
+            return this.openLinkBuilder;
         }
 
         public TextButtonBuilder withText(String text) {
