@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,16 +59,20 @@ public class Widget {
     public static final class WidgetBuilder extends NestedBuilder<Section.SectionBuilder, Widget> {
         private KeyValue keyValue;
         private Image image;
-        private List<Button> buttons = null;
+        private List<Button> buttons = new ArrayList<Button>();
 
         private KeyValue.KeyValueBuilder keyValueBuilder = KeyValue.builder().withParentBuilder(this);
         private Image.ImageBuilder imageBuilder = Image.builder().withParentBuilder(this);
 
-        /*private Button.ButtonBuilder buttonBuilder = Button.builder().withParentBuilder(this);
-        public Button.ButtonBuilder addButton() {
-            return this.buttonBuilder;
+        private ImageButton.ImageButtonBuilder imageButtonBuilder = ImageButton.builder().withParentBuilder(this);
+        public ImageButton.ImageButtonBuilder addImageButton() {
+            return this.imageButtonBuilder;
         }
-*/
+        private TextButton.TextButtonBuilder textButtonBuilder = TextButton.builder().withParentBuilder(this);
+        public TextButton.TextButtonBuilder addTextButton() {
+            return this.textButtonBuilder;
+        }
+
         private WidgetBuilder() {
         }
 
@@ -95,6 +100,16 @@ public class Widget {
 
         public WidgetBuilder withButtons(List<Button> buttons) {
             this.buttons = buttons;
+            return this;
+        }
+
+        public WidgetBuilder withImageButton(ImageButton button) {
+            this.buttons.add(button);
+            return this;
+        }
+
+        public WidgetBuilder withTextButton(TextButton button) {
+            this.buttons.add(button);
             return this;
         }
 
