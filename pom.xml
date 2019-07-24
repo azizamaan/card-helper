@@ -7,22 +7,44 @@
     <groupId>dev.amaan</groupId>
     <artifactId>card-helper</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <properties>
+        <jackson.core>2.9.9</jackson.core>
+        <jackson.annotations>2.9.9</jackson.annotations>
+        <jackson.databind>2.9.9</jackson.databind>
+        <spring.framework>4.3.0.RELEASE</spring.framework>
+        <spring.web>4.3.0.RELEASE</spring.web>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
-            <version>2.9.9</version>
+            <version>${jackson.core}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
-            <version>2.9.9</version>
+            <version>${jackson.annotations}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.9.9</version>
+            <version>${jackson.databind}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.framework}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.framework}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.web}</version>
         </dependency>
     </dependencies>
 
