@@ -11,8 +11,7 @@
         <jackson.core>2.9.9</jackson.core>
         <jackson.annotations>2.9.9</jackson.annotations>
         <jackson.databind>2.9.9</jackson.databind>
-        <spring.framework>4.3.0.RELEASE</spring.framework>
-        <spring.web>4.3.0.RELEASE</spring.web>
+        <google.api.client>1.25.0</google.api.client>
     </properties>
     <dependencies>
         <dependency>
@@ -32,19 +31,9 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>${spring.framework}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>${spring.framework}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>${spring.web}</version>
+            <groupId>com.google.api-client</groupId>
+            <artifactId>google-api-client</artifactId>
+            <version>${google.api.client}</version>
         </dependency>
     </dependencies>
 

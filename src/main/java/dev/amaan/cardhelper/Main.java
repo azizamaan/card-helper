@@ -6,6 +6,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
 public class Main {
 	public static void main(String... args) throws IOException {
 		/*
@@ -30,11 +31,12 @@ public class Main {
 				.done()
 				.build();
 		ObjectMapper mapper = new ObjectMapper();
-
+        String host = "";
 		String s = mapper.writeValueAsString(message);
 		System.out.println(s);
 		// Replace the webhook with actual webhook url
-		callWebhook("webhook",s);
+		//callWebhook(host,s);
+        createMessageAndSend(host);
 	}
 
 	private static void callWebhook(String webhook, String message) throws IOException {
@@ -54,5 +56,16 @@ public class Main {
 
 
 		conn.disconnect();
+	}
+
+	public static void createMessageAndSend(String host) {
+		Message message = Message
+				.messageBuilder()
+				.addCard()
+				.addHeader().withTitle("A").withSubtitle("C")
+				.done()
+				.done()
+				.build();
+		message.send(host);
 	}
 }
