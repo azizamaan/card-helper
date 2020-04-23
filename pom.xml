@@ -10,7 +10,7 @@
     <properties>
         <jackson.core>2.9.9</jackson.core>
         <jackson.annotations>2.9.9</jackson.annotations>
-        <jackson.databind>2.9.9</jackson.databind>
+        <jackson.databind>2.9.10.4</jackson.databind>
         <google.api.client>1.25.0</google.api.client>
     </properties>
     <dependencies>
