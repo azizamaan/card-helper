@@ -8,7 +8,7 @@
     <artifactId>card-helper</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
-        <jackson.core>2.9.9</jackson.core>
+        <jackson.core>2.13.0</jackson.core>
         <jackson.annotations>2.9.9</jackson.annotations>
         <jackson.databind>2.9.9</jackson.databind>
         <google.api.client>1.25.0</google.api.client>
